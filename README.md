@@ -4,8 +4,21 @@ This is the source for the openastronomy.org website.
 
 ## Building
 
+To build this site locally, you need to have ruby installed.
+We recommend using [rbenv](https://github.com/rbenv/rbenv) to mange ruby environments.
+
+With rbenv installed, you can do the following:
+
+```shell
+git clone git@github.com:<USERNAME>/openastronomy.github.io.git
+cd openastronomy.github.io
+# Of time at writing, this is the version used by github pages
+rbenv install 3.3.4
+rbenv local 3.3.4
+gem install bundler
+```
+
 To build the site locally, you will need [jekyll](https://jekyllrb.com) to be installed.
-Depending on your Ruby setup this may require superuser privileges to install to the default location.
 Clone this repository locally, then inside it, type:
 
 ```shell
