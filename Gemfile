@@ -1,8 +1,15 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 require 'json'
+require 'uri'
 require 'open-uri'
-versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
-gem 'github-pages', group: :jekyll_plugins
+versions =
+    begin
+        JSON.parse(URI.parse('https://pages.github.com/versions.json').open.read)
+    rescue SocketError
+        { 'github-pages' => 67 }
+    end
+
+gem 'github-pages', versions['github-pages']
 gem 'html-proofer'

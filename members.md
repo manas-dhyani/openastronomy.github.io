@@ -13,4 +13,3 @@ permalink: /members/
   {% cycle '', '<div class="row-fluid">' %}
 {% endfor %}
 </div>
-  
